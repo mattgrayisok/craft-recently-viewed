@@ -1,8 +1,8 @@
 {
     "name": "mattgrayisok/craft-recently-viewed",
-    "description": "Track your user's recently viewed entries and surface them on subsequent pages.",
+    "description": "Craft CMS plugin to find recently viewed elements or any type.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",

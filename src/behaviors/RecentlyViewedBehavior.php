@@ -42,9 +42,12 @@ class RecentlyViewedBehavior extends Behavior {
     {
         if($this->recentlyViewed) {
             $recentIds = Craft::$app->getSession()->get('rv-recent-ids');
-            $this->owner->query->where(['elements.id' => $recentIds]);
+            $this->owner->subQuery->andWhere(['elements.id' => $recentIds]);
             if ($this->orderByDateViewed) {
                 $recentIds = Craft::$app->getSession()->get('rv-recent-ids');
+                $this->owner->subQuery->orderBy([new \yii\db\Expression(
+                'FIELD (elements.id, ' . implode(',', array_reverse($recentIds)) . ')'
+                )]);
                 $this->owner->query->orderBy([new \yii\db\Expression(
                 'FIELD (elements.id, ' . implode(',', array_reverse($recentIds)) . ')'
                 )]);

@@ -56,11 +56,11 @@ class Queries extends Component
             if(is_null($recentIds)){
                 $recentIds = [];
             }
-            if (!in_array($id, $recentIds))
-            {
-                $recentIds[] = $id;
-                Craft::$app->getSession()->set('rv-recent-ids', $recentIds);
+            if (false !== $key = array_search($id, $recentIds)) {
+                unset($recentIds[$key]);
             }
+            $recentIds[] = $id;
+            Craft::$app->getSession()->set('rv-recent-ids', $recentIds);
         }
     }
 }
