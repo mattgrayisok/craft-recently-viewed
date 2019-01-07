@@ -44,7 +44,7 @@ element queries:
 E.G.
 
 ```
-{% set recentBlogPosts = craft.entries.recentlyViewed().orderByDateViewed().all() %}
+{% set recentBlogPosts = craft.entries.section('blogPosts').recentlyViewed().orderByDateViewed().all() %}
 ```
 
 ```
