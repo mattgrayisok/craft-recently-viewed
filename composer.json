@@ -1,6 +1,6 @@
 {
     "name": "mattgrayisok/craft-recently-viewed",
-    "description": "Craft CMS plugin to find recently viewed elements or any type.",
+    "description": "Craft CMS plugin to find recently viewed elements of any type.",
     "type": "craft-plugin",
     "version": "1.0.1",
     "keywords": [
