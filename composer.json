@@ -1,0 +1,44 @@
+{
+    "name": "mattgrayisok/craft-recently-viewed",
+    "description": "Track your user's recently viewed entries and surface them on subsequent pages.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "recently",
+        "viewed"
+    ],
+    "support": {
+        "docs": "https://github.com/mattgrayisok/craft-recently-viewed/blob/master/README.md",
+        "issues": "https://github.com/mattgrayisok/craft-recently-viewed/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Gray",
+            "homepage": "https://mattgrayisok.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "mattgrayisok\\recentlyviewed\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Recently Viewed",
+        "handle": "recently-viewed",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/mattgrayisok/craft-recently-viewed/master/CHANGELOG.md",
+        "components": {
+
+        },
+        "class": "mattgrayisok\\recentlyviewed\\RecentlyViewed"
+    }
+}

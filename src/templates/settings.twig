@@ -1,0 +1,23 @@
+{#
+/**
+ * Recently Viewed plugin for Craft CMS 3.x
+ *
+ * Recently Viewed settings.twig
+ *
+ * @author    Matt Gray
+ * @copyright Copyright (c) 2018 Matt Gray
+ * @link      https://mattgrayisok.com
+ * @package   RecentlyViewed
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.lightswitchField({
+    first: true,
+    label: "Auto Track",
+    instructions: "Should elements which have are associated with specific URLs be auto-tracked whenever a user visits the associated URL?",
+    name: 'autoTrack',
+    on: settings.autoTrack
+}) }}
