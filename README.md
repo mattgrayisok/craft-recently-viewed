@@ -19,7 +19,7 @@ that you've modeled as an Element in Craft, even custom Element types.
 ## License
 
 This plugin requires a commercial license which can be purchased through the Craft Plugin Store.  
-The license fee is $9 plus \$4 per subsequent year for updates (optional).
+The license fee is $14 plus \$5 per subsequent year for updates (optional).
 
 ## Requirements
 
