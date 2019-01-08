@@ -61,11 +61,11 @@ You can disable this auto tracking behaviour in the plugin settings.
 
 You can also manually track views in your twig templates using:
 
-`{% do craft.recentlyViewed.track($element) %}`
+`{% do craft.recentlyViewed.track(element) %}`
 
 OR
 
-`{% do craft.recentlyViewed.trackId($elementId) %}`
+`{% do craft.recentlyViewed.trackId(elementId) %}`
 
 You can pass _any_ element type into the former function as long as it implements `craft\base\ElementInterface`.
 
