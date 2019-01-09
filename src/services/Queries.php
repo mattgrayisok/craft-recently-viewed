@@ -50,8 +50,8 @@ class Queries extends Component
 
     public function trackId($id)
     {
-        $id = intval($id);
         if (!is_null($id)) {
+            $id = intval($id);
             $recentIds = Craft::$app->getSession()->get('rv-recent-ids');
             if(is_null($recentIds)){
                 $recentIds = [];
