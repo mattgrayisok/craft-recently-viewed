@@ -81,7 +81,7 @@ If you encounter any issues during the use of this plugin please let me know by:
 
 * Creating an issue on GitHub
 * Dropping me an email: matt at mattgrayisok dot com
-* Finding me in the Craft Slack: @Matt
+* Finding me in the Craft Slack: @mattgrayisok
 * DMing me on Twitter: @mattgrayisok
 
 I'll respond to critical issues as quickly as I can.
