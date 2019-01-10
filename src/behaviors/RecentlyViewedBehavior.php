@@ -63,7 +63,6 @@ class RecentlyViewedBehavior extends Behavior {
                         $allCases .= 'WHEN elements.id=' . $anId . ' THEN ' . $count . ' ';
                         $count++;
                     }
-                    var_dump($allCases);
                     $this->owner->subQuery->orderBy([new \yii\db\Expression(
                     'CASE ' . $allCases . ' END'
                     )]);

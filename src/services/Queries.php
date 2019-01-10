@@ -35,6 +35,8 @@ use craft\base\ElementInterface;
 class Queries extends Component
 {
 
+    private $maxRecentHistory = 99;
+
     public function clear()
     {
         Craft::$app->getSession()->set('rv-recent-ids', []);
@@ -60,6 +62,9 @@ class Queries extends Component
                 unset($recentIds[$key]);
             }
             $recentIds[] = $id;
+            if(sizeof($recentIds) > $this->maxRecentHistory){
+                $recentIds = array_slice($recentIds, - $this->maxRecentHistory);
+            }
             Craft::$app->getSession()->set('rv-recent-ids', $recentIds);
         }
     }
