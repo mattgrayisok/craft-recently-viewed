@@ -43,16 +43,34 @@ class RecentlyViewedBehavior extends Behavior {
         if($this->recentlyViewed) {
             $recentIds = Craft::$app->getSession()->get('rv-recent-ids');
             if(!is_array($recentIds) || sizeof($recentIds) == 0){
-                $recentIds = [-1]; //Need at least one lement for SQL to be valid
+                $recentIds = [-1]; //Need at least one element for SQL to be valid
             }
             $this->owner->subQuery->andWhere(['elements.id' => $recentIds]);
             if ($this->orderByDateViewed) {
-                $this->owner->subQuery->orderBy([new \yii\db\Expression(
-                'FIELD (elements.id, ' . implode(',', array_reverse($recentIds)) . ')'
-                )]);
-                $this->owner->query->orderBy([new \yii\db\Expression(
-                'FIELD (elements.id, ' . implode(',', array_reverse($recentIds)) . ')'
-                )]);
+                if(Craft::$app->db->isMysql){
+                    $idList = implode(',', array_reverse($recentIds));
+                    $this->owner->subQuery->orderBy([new \yii\db\Expression(
+                    'FIELD (elements.id, ' . $idList . ')'
+                    )]);
+                    $this->owner->query->orderBy([new \yii\db\Expression(
+                    'FIELD (elements.id, ' . $idList . ')'
+                    )]);
+                } else {
+                    //Postgres sadness - works in mysql too but less performant
+                    $allCases = '';
+                    $count = 1;
+                    foreach(array_reverse($recentIds) as $anId){
+                        $allCases .= 'WHEN elements.id=' . $anId . ' THEN ' . $count . ' ';
+                        $count++;
+                    }
+                    var_dump($allCases);
+                    $this->owner->subQuery->orderBy([new \yii\db\Expression(
+                    'CASE ' . $allCases . ' END'
+                    )]);
+                    $this->owner->query->orderBy([new \yii\db\Expression(
+                    'CASE ' . $allCases . ' END'
+                    )]);
+                }
             }
         }
         return true;
