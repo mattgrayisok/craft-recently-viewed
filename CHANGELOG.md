@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.3 - 2019-01-10
+### Added
+- Postgres support
+- Max limit of 99 elements in history
+
 ## 1.0.2 - 2019-01-08
 ### Updated
 - Fixed null state issue when combined with ordering
