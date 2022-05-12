@@ -8,7 +8,7 @@ class Settings extends Model
 {
     public $autoTrack = true;
 
-    public function rules()
+    public function rules(): array
     {
         return [
             [['autoTrack'], 'boolean'],

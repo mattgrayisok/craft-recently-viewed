@@ -14,7 +14,7 @@ use mattgrayisok\recentlyviewed\services\Queries;
 use mattgrayisok\recentlyviewed\behaviors\RecentlyViewedBehavior;
 use mattgrayisok\recentlyviewed\models\Settings;
 
-
+use craft\base\Model;
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
@@ -49,9 +49,9 @@ class RecentlyViewed extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '1.0.2';
+    public string $schemaVersion = '1.0.2';
 
-    public $hasCpSettings = true;
+    public bool $hasCpSettings = true;
 
     /**
      * @inheritdoc
@@ -103,12 +103,12 @@ class RecentlyViewed extends Plugin
         });
     }
 
-    protected function createSettingsModel()
+    protected function createSettingsModel() : ?Model
     {
         return new Settings();
     }
 
-    protected function settingsHtml()
+    protected function settingsHtml() : ?string
     {
         return \Craft::$app->getView()->renderTemplate('recently-viewed/settings', [
             'settings' => $this->getSettings()
