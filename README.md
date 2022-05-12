@@ -25,6 +25,10 @@ The license fee is $14 plus \$5 per subsequent year for updates (optional).
 
 This plugin requires Craft CMS 3.0.0 or later.
 
+For Craft 3 use version ^1.0.0
+
+For Craft 4 use version ^2.0.0
+
 ## Usage
 
 Install the plugin from the Craft Plugin Store in your site's control panel or manually using composer:
