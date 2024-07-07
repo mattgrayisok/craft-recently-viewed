@@ -1,5 +1,11 @@
 # Recently Viewed Changelog
 
+## 3.0.0 - 2024-07-07
+
+### Added
+
+- Craft 5 compat
+
 ## 2.0.0 - 2022-05-12
 
 ### Added

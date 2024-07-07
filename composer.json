@@ -2,7 +2,7 @@
     "name": "mattgrayisok/craft-recently-viewed",
     "description": "Craft CMS plugin to find recently viewed elements of any type.",
     "type": "craft-plugin",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "keywords": [
         "craft",
         "cms",
@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^4.0.0-beta.1",
+        "craftcms/cms": "^5.0.0-beta.1",
         "php": "^8.0.0"
     },
     "autoload": {
